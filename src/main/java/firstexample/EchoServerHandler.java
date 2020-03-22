@@ -14,6 +14,6 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
         // Java doc: https://netty.io/4.0/api/io/netty/buffer/ByteBuf.html
         ByteBuf in = (ByteBuf) msg;
         System.out.println("System received: " + in.toString(CharsetUtil.UTF_8));
-
+        ctx.write(in);
     }
 }
